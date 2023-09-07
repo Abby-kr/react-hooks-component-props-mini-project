@@ -6,27 +6,17 @@ import ArticleList from "./ArticleList"
 
 console.log(blogData);
 
-
-//Header, Image & About in array
-const newBlogData = []
-
  //Name for Header
 const headerName = blogData.name
-newBlogData.push(headerName)
 
-//Image & text for About
-const aboutImage = blogData.image
- newBlogData.unshift(aboutImage)
-const aboutText = blogData.about
-newBlogData.push(aboutText)
-
-console.log(newBlogData)
+//Image for About
+const logo = blogData.image
 
 function App() {
   return (
     <div className="App">
-      <Header name={newBlogData[1]} />
-      <About imageSrc={newBlogData[0]} text={newBlogData[2]}/>
+      <Header name={headerName} />
+      <About image={logo} about="About this blog"/>
       <ArticleList posts={blogData.posts} />
     </div>
   );
